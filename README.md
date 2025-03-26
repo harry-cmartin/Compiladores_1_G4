@@ -1,3 +1,6 @@
+# COMPILADORES
+
+
 Para rodar o **Flex** e o **Bison** no Linux, siga estes passos:
 
 ### 1. Instalar o Flex e o Bison
@@ -37,16 +40,16 @@ Crie dois arquivos:
 1. **Gerar o analisador sintático com Bison**:
 
 ```bash
-bison -d parser.y
+bison -d hello.y
 ```
 Isso gera:
-- `parser.tab.c` → Código C do analisador sintático
-- `parser.tab.h` → Cabeçalho com definições dos tokens
+- `hello.tab.c` → Código C do analisador sintático
+- `hello.tab.h` → Cabeçalho com definições dos tokens
 
 2. **Gerar o analisador léxico com Flex**:
 
 ```bash
-flex lexer.l
+flex hello.l
 ```
 Isso gera:
 - `lex.yy.c` → Código C do analisador léxico
@@ -54,7 +57,7 @@ Isso gera:
 3. **Compilar tudo com o GCC**:
 
 ```bash
-gcc -o analisador parser.tab.c lex.yy.c -lfl
+gcc -o analisador hello.tab.c lex.yy.c -lfl
 ```
 
 ---
